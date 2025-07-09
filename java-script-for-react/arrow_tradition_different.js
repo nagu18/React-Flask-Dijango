@@ -4,7 +4,7 @@ const speker = { name: "Nagu", Sayhi: function(){
 },
 }
 speker.Sayhi()
-
+// this. is not working -- 
 const speker1 = { name:'konda', SayHI: () => {
     console.log(`hi ${this.name}`);
 },

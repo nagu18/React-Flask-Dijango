@@ -1,0 +1,16 @@
+what is the arrow function syntex 
+const functionName = (parameters) => returnValue;
+
+samples:
+// Traditional function
+function greet() {
+  return "Hello!";
+}
+
+// Arrow function
+const greet = () => {
+  return "Hello!";
+}
+//short way:
+const greet = () => "Hello!";
+

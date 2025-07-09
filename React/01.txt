@@ -1,0 +1,38 @@
+cmds:- 
+npx create-react-app <name of the project>
+npm - to start the server
+npm run build - build the application for production 
+npm test - start the runner
+
+------------------------------------------------------------------
+ directory structure:- 
+
+
+ “node_modules/: all the important dependencies are there
+
+ public/ = { /index.html
+Basic HTML shell for your app
+<div id="root">
+React renders content here
+src/index.js
+Mounts your app into the root div
+localhost:3000
+Default local server for viewing your React app
+Static files in public/
+Directly served without Webpack processing
+ }
+
+src/ = it the working hub 
+/app.js = App.js is a single parent component — 
+but you can turn it into a multi-component or 
+nested-component setup as your app grows.
+
+(app.css and index.css) = for styleing
+
+src app.test.js = for tesing react application 
+
+index.js = entry poin of react  application
+
+package.json = node package dependencies other metadata used by project for setup in other computer 
+package.lock.json = node dependencies which contain verstion of npm 
+
