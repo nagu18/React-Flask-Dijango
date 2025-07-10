@@ -1,0 +1,19 @@
+create a project (django-admin startproject <name of project>)
+create a application (django manage.py startapp <name of app >)
+open models.py (create the modles) Here
+to apply the chages 
+python manage.py makemigrations
+python manage.py migrate
+------------------------------------------------------
+to add to admin(page of django)
+create superuser (python manage.py createsuper)
+go to admin.py
+and import the models
+then the class that u created
+-------------------------------------------------------
+u have to creat a person in html the relavet code
+creat urls inside the app
+add the urls to the main urls.py
+edit the views.py
+# to render the html
+
