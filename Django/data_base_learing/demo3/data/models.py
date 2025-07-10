@@ -7,3 +7,7 @@ class Person(models.Model):
 
     def __str__(self):
         return self.name
+    
+#here wu create the data_base
+# set it to admin.py for input the data base 
+# the go to view.py to render the page and use the model by a object in view.py 
