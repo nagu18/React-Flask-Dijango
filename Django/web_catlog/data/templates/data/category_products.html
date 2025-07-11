@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Product List by Category</title></head>
+<body>
+    <h1>View Products by Category</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Show Products</button>
+    </form>
+
+    {% if selected_category %}
+        <h2>Products in "{{ selected_category.name }}"</h2>
+        {% if products %}
+            <ul>
+                {% for product in products %}
+                    <li>{{ product.name }} — ₹{{ product.price }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No products in this category.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

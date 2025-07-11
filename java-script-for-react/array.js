@@ -10,3 +10,8 @@ const names = ['yatesh','nagu','pawan','adi','santhosh','chaithanya'];
 const [q,w,e,r,t,y]=names;
 console.log(q)
 console.log(w)
+
+//skip the value:- 
+const name2 = ['yatesh','nagu','pawan','adi','santhosh','chaithanya'];
+const [...rest]=name2;
+console.log(rest);
