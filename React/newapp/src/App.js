@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Output from './Components/App';  // ✅ Importing Output component
+
+const data = { name: 'nagu', age: 21 };
 
 function App() {
+  const { name, age } = data;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <h1>Hello {name}</h1>
+        <h2>Age: {age}</h2>
+
+        {/* ✅ Render Output component here */}
+        <Output />
+      </div>
+    </>
   );
 }
 

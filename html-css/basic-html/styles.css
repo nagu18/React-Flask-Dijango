@@ -1,0 +1,13 @@
+/* Apply Roboto font to the whole page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Style for the icons */
+.material-icons {
+    font-size: 36px;
+    color: #007bff;
+    margin-right: 10px;
+}
