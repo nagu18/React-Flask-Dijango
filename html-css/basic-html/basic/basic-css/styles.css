@@ -1,0 +1,14 @@
+/* we dont need tags of style*/
+
+h1, h2, p {
+    text-align: center;
+
+}
+body {
+    /*background-color: burlywood;*/
+}
+/* the id is access by #<variable> div in html>*/
+#menu {
+    width: 300px; /*We can mention in persentage 80%,<value>px,*/ 
+    background-color: burlywood;
+}
