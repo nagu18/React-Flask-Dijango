@@ -1,17 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookVault - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+    
+    .book-gradient {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+    
+    .input-field {
+      background: rgba(30, 41, 59, 0.7);
+      transition: all 0.3s ease;
+    }
+    
+    .input-field:focus {
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 0 0 2px #6366f1;
+    }
+    
+    .login-btn {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      opacity: 0.5;
+    }
+    
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .register-link {
+      transition: all 0.3s ease;
+    }
+    
+    .register-link:hover {
+      color: #c7d2fe;
+      text-shadow: 0 0 8px rgba(199, 210, 254, 0.3);
+    }
+    
+    .book-icon {
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+  </style>
 </head>
-<body>
-  <h2>Login</h2>
-  <form method="POST">
-    <label>Username:</label><br>
-    <input type="text" name="username" required><br>
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
-    <input type="submit" value="Login">
-  </form>
-  <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+<body class="min-h-screen flex items-center justify-center p-4">
+  <div class="book-gradient rounded-2xl p-8 shadow-2xl max-w-md w-full overflow-hidden">
+    <div class="flex justify-center mb-6">
+      <div class="book-icon p-4 rounded-full bg-indigo-950/70">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/195d962c-1576-4ae2-a30e-1aed2965052c.png" alt="Stack of hardcover books with a golden bookmark hanging out, dark academia style" class="w-16 h-16" />
+      </div>
+    </div>
+    
+    <h1 class="text-3xl font-bold text-center mb-2 text-indigo-200">BookVault</h1>
+    <p class="text-center mb-8 text-slate-400">Your personal literary sanctuary</p>
+    
+    <form method="POST" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-400">Username</label>
+        <input 
+          type="text" 
+          name="username" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-slate-700 input-field focus:outline-none focus:border-indigo-500 text-white"
+          placeholder="Enter your username">
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-400">Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-slate-700 input-field focus:outline-none focus:border-indigo-500 text-white"
+          placeholder="••••••••">
+      </div>
+      
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded border-slate-700 text-indigo-600 focus:ring-indigo-500 bg-slate-800">
+          <label for="remember-me" class="ml-2 block text-sm text-slate-400">Remember me</label>
+        </div>
+        <div class="text-sm">
+          <a href="#" class="font-medium text-indigo-400 hover:text-indigo-300">Forgot password?</a>
+        </div>
+      </div>
+      
+      <button type="submit" class="w-full py-3 px-4 rounded-lg font-semibold login-btn text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900">
+        Sign in
+      </button>
+    </form>
+    
+    <div class="divider my-6">
+      <span class="mx-4 text-xs text-slate-500 uppercase">Or continue with</span>
+    </div>
+    
+    <div class="mb-6 flex gap-4 justify-center">
+      <button class="bg-slate-800 hover:bg-slate-700 transition p-3 rounded-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/94ccaca7-425c-42cd-8115-9f8278366703.png" alt="Google G logo icon" class="w-5 h-5" />
+      </button>
+      <button class="bg-slate-800 hover:bg-slate-700 transition p-3 rounded-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/98c9ab91-35fe-40a5-9894-59642d61a6a1.png" alt="Facebook logo icon" class="w-5 h-5" />
+      </button>
+      <button class="bg-slate-800 hover:bg-slate-700 transition p-3 rounded-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09deb6bc-fc1a-4bdb-8542-dffda503eace.png" alt="Apple logo icon" class="w-5 h-5" />
+      </button>
+    </div>
+    
+    <p class="text-center text-sm text-slate-500">
+      Don't have an account?
+      <a href="{{ url_for('register') }}" class="register-link font-medium text-indigo-400 ml-1">
+        Register now
+      </a>
+    </p>
+    
+    <div class="text-center mt-8">
+      <p class="text-xs text-slate-600">© 2023 BookVault. All rights reserved.</p>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form submission animation
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(e) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = 'Signing in...';
+        submitBtn.classList.add('opacity-75');
+      });
+      
+      // Add slight hover effect to social buttons
+      const socialBtns = document.querySelectorAll('.flex.gap-4 button');
+      socialBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+          btn.style.transform = 'translateY(-2px)';
+          btn.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        });
+        btn.addEventListener('mouseleave', () => {
+          btn.style.transform = '';
+          btn.style.boxShadow = '';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
+

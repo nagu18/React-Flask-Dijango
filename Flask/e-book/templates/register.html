@@ -1,17 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookVault - Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+    }
+    
+    .book-gradient {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+    
+    .input-field {
+      background: rgba(30, 41, 59, 0.7);
+      transition: all 0.3s ease;
+    }
+    
+    .input-field:focus {
+      background: rgba(30, 41, 59, 0.9);
+      box-shadow: 0 0 0 2px #6366f1;
+    }
+    
+    .register-btn {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      transition: all 0.3s ease;
+    }
+    
+    .register-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      opacity: 0.5;
+    }
+    
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .login-link {
+      transition: all 0.3s ease;
+    }
+    
+    .login-link:hover {
+      color: #c7d2fe;
+      text-shadow: 0 0 8px rgba(199, 210, 254, 0.3);
+    }
+  </style>
 </head>
-<body>
-  <h2>Register</h2>
-  <form method="POST">
-    <label>Username:</label><br>
-    <input type="text" name="username" required><br>
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
-    <input type="submit" value="Register">
-  </form>
-  <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+<body class="min-h-screen flex items-center justify-center p-4">
+  <div class="book-gradient rounded-2xl p-8 shadow-2xl max-w-md w-full overflow-hidden">
+    <h1 class="text-3xl font-bold text-center mb-2 text-indigo-200">BookVault</h1>
+    <p class="text-center mb-8 text-slate-400">Create your account</p>
+    
+    <form method="POST" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-400">Username</label>
+        <input 
+          type="text" 
+          name="username" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-slate-700 input-field focus:outline-none focus:border-indigo-500 text-white"
+          placeholder="Enter your username">
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium mb-2 text-slate-400">Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          required
+          class="w-full px-4 py-3 rounded-lg border border-slate-700 input-field focus:outline-none focus:border-indigo-500 text-white"
+          placeholder="••••••••">
+      </div>
+      
+      <button type="submit" class="w-full py-3 px-4 rounded-lg font-semibold register-btn text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-900">
+        Register
+      </button>
+    </form>
+    
+    <div class="divider my-6">
+      <span class="mx-4 text-xs text-slate-500 uppercase">Or continue with</span>
+    </div>
+    
+    <div class="mb-6 flex gap-4 justify-center">
+      <button class="bg-slate-800 hover:bg-slate-700 transition p-3 rounded-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/94ccaca7-425c-42cd-8115-9f8278366703.png" alt="Google G logo icon" class="w-5 h-5" />
+      </button>
+      <button class="bg-slate-800 hover:bg-slate-700 transition p-3 rounded-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/98c9ab91-35fe-40a5-9894-59642d61a6a1.png" alt="Facebook logo icon" class="w-5 h-5" />
+      </button>
+      <button class="bg-slate-800 hover:bg-slate-700 transition p-3 rounded-lg">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/09deb6bc-fc1a-4bdb-8542-dffda503eace.png" alt="Apple logo icon" class="w-5 h-5" />
+      </button>
+    </div>
+    
+    <p class="text-center text-sm text-slate-500">
+      Already have an account?
+      <a href="{{ url_for('login') }}" class="login-link font-medium text-indigo-400 ml-1">
+        Login now
+      </a>
+    </p>
+    
+    <div class="text-center mt-8">
+      <p class="text-xs text-slate-600">© 2023 BookVault. All rights reserved.</p>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Form submission animation
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(e) {
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.innerHTML = 'Registering...';
+        submitBtn.classList.add('opacity-75');
+      });
+    });
+  </script>
 </body>
 </html>
