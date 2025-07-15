@@ -8,7 +8,12 @@ body {
     /*background-color: burlywood;*/
 }
 /* the id is access by #<variable> div in html>*/
-#menu {
+/*to  access the id we use #menu (#<variable>) */
+/* to access the class we use .menu .<varible>*/
+.menu {
     width: 300px; /*We can mention in persentage 80%,<value>px,*/ 
     background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+
 }
