@@ -127,7 +127,3 @@ Made by Konda Nagu using Flask + MySQL.
 📄 License
 
 MIT License (or add your preferred license)
-
----
-
-Let me know if you want this saved to an actual `README.md` file or enhanced with badges, screenshot links, or GitHub setup instructions.
