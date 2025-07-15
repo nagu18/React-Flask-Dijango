@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <!--email-->
+    <form method="post">
+        {% csrf_token %}
+        <div class="mail">
+            <label for="Email">Email</label>
+            <input type="text" name="mail" id="mail" required>
+        </div>
+    <!--username-->
+        <div class="username">
+            <label for="username" >Username</label>
+            <input type="text" name="username" id="username" required>
+        </div>
+    <!--password-->
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+
+        <div class="submit">
+                <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
